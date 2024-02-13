@@ -1,0 +1,2 @@
+
+if(and(not(angle < 0°), not(90° < angle)), angle, if(angle < 0°, 0°, 90°))

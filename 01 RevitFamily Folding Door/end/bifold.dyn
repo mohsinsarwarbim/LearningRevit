@@ -1,0 +1,281 @@
+{
+  "Uuid": "fb36d216-3adb-41b6-a41c-0174526bb3f5",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "bifold",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Element.SetParameterByName@string,var",
+      "Id": "085f9bf6518247ada3f8637c79120dac",
+      "Inputs": [
+        {
+          "Id": "7a9b61f84a494f21abd9a00c4049f6de",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "18b54b9c7c60411a964f00feaadbd0d5",
+          "Name": "parameterName",
+          "Description": "The name of the parameter to set.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b75238054cd34e92a1279b82e6cc7f80",
+          "Name": "value",
+          "Description": "The value.\n\nvar",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d53156fc84b5418cbfb21295f9c6c91d",
+          "Name": "Element",
+          "Description": "Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Set one of the element's parameters.\n\nElement.SetParameterByName (parameterName: string, value: var): Element"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Double",
+      "MaximumValue": 90.0,
+      "MinimumValue": 0.0,
+      "StepValue": 1.0,
+      "InputValue": 51.0,
+      "Id": "7eadf48aae044bb997677e3d6b301446",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "c1daaef7fa414faea952909d48617305",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"angle\";",
+      "Id": "2db48ce320b047dc948558959b541e5b",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "35f597a4830247ee82ed1309e9216d39",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementsOfCategory, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "Id": "111d1559be0c425cad7ce27c61a2c14d",
+      "Inputs": [
+        {
+          "Id": "6e49dba5b1814c31aaeb21486cf30fac",
+          "Name": "Category",
+          "Description": "The Category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ae12740e05de46b8af2312cec1cf1898",
+          "Name": "Elements",
+          "Description": "An element type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Get all elements of the specified category from the model."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.Categories, DSRevitNodesUI",
+      "SelectedIndex": 186,
+      "SelectedString": "OST_Doors",
+      "NodeType": "ExtensionNode",
+      "Id": "1a172ada4781453ea3d669c04f89ca50",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "a638fdbae3374d0b8ff4e7e5d145530b",
+          "Name": "Category",
+          "Description": "The selected Category.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All built-in categories."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "c1daaef7fa414faea952909d48617305",
+      "End": "b75238054cd34e92a1279b82e6cc7f80",
+      "Id": "93097cb069c94267b0a48abb9c02e351"
+    },
+    {
+      "Start": "35f597a4830247ee82ed1309e9216d39",
+      "End": "18b54b9c7c60411a964f00feaadbd0d5",
+      "Id": "f7b731381e724342a52ec6586574422b"
+    },
+    {
+      "Start": "ae12740e05de46b8af2312cec1cf1898",
+      "End": "7a9b61f84a494f21abd9a00c4049f6de",
+      "Id": "2f6590ddd0a24121a23c329e41c71c72"
+    },
+    {
+      "Start": "a638fdbae3374d0b8ff4e7e5d145530b",
+      "End": "6e49dba5b1814c31aaeb21486cf30fac",
+      "Id": "0b9e521214c94ac39af0b4c52ee4aef6"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.12",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "1.10",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.12.1.8246",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Element.SetParameterByName",
+        "Id": "085f9bf6518247ada3f8637c79120dac",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 415.88344174909355,
+        "Y": 258.73349693377509
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "bifold door",
+        "Id": "7eadf48aae044bb997677e3d6b301446",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 51.350919568371339,
+        "Y": 483.59875734066514
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "2db48ce320b047dc948558959b541e5b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 78.0,
+        "Y": 297.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "All Elements of Category",
+        "Id": "111d1559be0c425cad7ce27c61a2c14d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 149.73664612433242,
+        "Y": 140.70317887409826
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Categories",
+        "Id": "1a172ada4781453ea3d669c04f89ca50",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -99.389208958280051,
+        "Y": 127.6379599108397
+      }
+    ],
+    "Annotations": [],
+    "X": 127.17769158647781,
+    "Y": -51.534189956509891,
+    "Zoom": 0.672131042142456
+  }
+}
